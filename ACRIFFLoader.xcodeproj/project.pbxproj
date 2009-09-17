@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		533DBE1D1061E9910018CC95 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1B1061E9910018CC95 /* Renderer.framework */; };
+		533DBE1E1061E9910018CC95 /* RiffIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1C1061E9910018CC95 /* RiffIO.framework */; };
+		533DBE301061E9AF0018CC95 /* Renderer.framework in Copy Corel Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1B1061E9910018CC95 /* Renderer.framework */; };
+		533DBE311061E9AF0018CC95 /* RiffIO.framework in Copy Corel Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1C1061E9910018CC95 /* RiffIO.framework */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		CCF900820C29E1CB00BA85E7 /* ACRIFFLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		533DBDEF1061E4C70018CC95 /* Copy Corel Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				533DBE301061E9AF0018CC95 /* Renderer.framework in Copy Corel Frameworks */,
+				533DBE311061E9AF0018CC95 /* RiffIO.framework in Copy Corel Frameworks */,
+			);
+			name = "Copy Corel Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		533DBE1B1061E9910018CC95 /* Renderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Renderer.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/Renderer.framework"; sourceTree = "<absolute>"; };
+		533DBE1C1061E9910018CC95 /* RiffIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RiffIO.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/RiffIO.framework"; sourceTree = "<absolute>"; };
+		8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACRIFFLoader.acplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7115090F3BD81600D9DC74 /* ACPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACPlugin.h; path = src/ACPlugin.h; sourceTree = "<group>"; };
+		CCF900720C29E19900BA85E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCF900800C29E1CB00BA85E7 /* ACRIFFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACRIFFLoader.h; path = src/ACRIFFLoader.h; sourceTree = "<group>"; };
+		CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACRIFFLoader.m; path = src/ACRIFFLoader.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				533DBE1D1061E9910018CC95 /* Renderer.framework in Frameworks */,
+				533DBE1E1061E9910018CC95 /* RiffIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* acplugins */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = acplugins;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Corel Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CCF900800C29E1CB00BA85E7 /* ACRIFFLoader.h */,
+				CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Corel Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				533DBE1B1061E9910018CC95 /* Renderer.framework */,
+				533DBE1C1061E9910018CC95 /* RiffIO.framework */,
+			);
+			name = "Corel Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CC7115090F3BD81600D9DC74 /* ACPlugin.h */,
+				CCF900720C29E19900BA85E7 /* Info.plist */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* ACRIFFLoader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ACRIFFLoader" */;
+			buildPhases = (
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				533DBDEF1061E4C70018CC95 /* Copy Corel Frameworks */,
+				8D5B49AF048680CD000E48DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACRIFFLoader;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = acplugins;
+			productReference = 8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ACRIFFLoader" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* acplugins */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* ACRIFFLoader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF900820C29E1CB00BA85E7 /* ACRIFFLoader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks\"",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = ACRIFFLoader;
+				WRAPPER_EXTENSION = acplugin;
+			};
+			name = Release;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		CC2C7CA00B0BC41F00A22730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				OTHER_CFLAGS = "-DDEBUG";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		CC2C7CA10B0BC41F00A22730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = ACRIFFLoader;
+				WRAPPER_EXTENSION = acplugin;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ACRIFFLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913C08733D840010E9CD /* Release */,
+				CC2C7CA10B0BC41F00A22730 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ACRIFFLoader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB914008733D840010E9CD /* Release */,
+				CC2C7CA00B0BC41F00A22730 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
