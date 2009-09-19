@@ -3,7 +3,7 @@
 //  ACRIFFLoader
 //
 //  Created by The Stig on 16/09/09.
-//  Copyright The Stig 2009 . All rights reserved.
+//  Copyright 2009 The Stig. All rights reserved.
 //
 
 #import "ACRIFFLoader.h"
@@ -17,11 +17,12 @@
 
 - (void) willRegister: (id<ACPluginManager>) pluginManager
 {
-	[pluginManager registerIOProviderForReading: self forUTI:@"com.corel.riff"];
+	[pluginManager registerIOProviderForReading: self forUTI: @"com.corel.riff"];
 }
 
 - (void) didRegister
 {
+	NSLog(@"RIFF: did register");
 }
 
 - (BOOL) writeDocument: (id<ACDocument>) document toURL: (NSURL*) absoluteURL ofType: (NSString*) type 
@@ -32,14 +33,22 @@
 
 - (BOOL) loadCompoisteForDocument: (id<ACDocument>) document fromURL: (NSURL*) absoluteURL
 {
-	// Load the embedded preview, if there is one
+	// Launch helper application
+	
+	// Parse retrieved XML
+	
+	// Populate our document with data
+	
+	// Clean up temp files
+
 	return NO;
 }
 
 - (BOOL) readImageForDocument: (id<ACDocument>) document fromURL: (NSURL*) absoluteURL ofType: (NSString*) type
 												error: (NSError**) outError
 {
-	return NO;
+	NSLog(@"RIFF: readImageForDocument \"%@\"", absoluteURL);
+	return [self loadCompoisteForDocument: document fromURL: absoluteURL];
 }
 
 - (NSNumber*) worksOnShapeLayers: (id) userObject

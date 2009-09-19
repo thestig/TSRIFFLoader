@@ -3,9 +3,8 @@
 //  ACRIFFLoader
 //
 //  Created by The Stig on 16/09/09.
-//  Copyright The Stig 2009 . All rights reserved.
+//  Copyright 2009 The Stig. All rights reserved.
 //
-
 
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>

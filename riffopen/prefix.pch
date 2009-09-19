@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'riffopen' target in the 'riffopen' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

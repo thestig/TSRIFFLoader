@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		533DBE1D1061E9910018CC95 /* Renderer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1B1061E9910018CC95 /* Renderer.framework */; };
-		533DBE1E1061E9910018CC95 /* RiffIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1C1061E9910018CC95 /* RiffIO.framework */; };
 		533DBE301061E9AF0018CC95 /* Renderer.framework in Copy Corel Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1B1061E9910018CC95 /* Renderer.framework */; };
 		533DBE311061E9AF0018CC95 /* RiffIO.framework in Copy Corel Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBE1C1061E9910018CC95 /* RiffIO.framework */; };
+		533DC19F10648B4E0018CC95 /* riffopen in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 533DC19910648AC30018CC95 /* riffopen */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		CCF900820C29E1CB00BA85E7 /* ACRIFFLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		533DC19810648AC30018CC95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 533DC19410648AC30018CC95 /* riffopen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E /* riffopen */;
+			remoteInfo = riffopen;
+		};
+		533DC19A10648ACD0018CC95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 533DC19410648AC30018CC95 /* riffopen.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E /* riffopen */;
+			remoteInfo = riffopen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		533DBDEF1061E4C70018CC95 /* Copy Corel Frameworks */ = {
@@ -28,6 +44,17 @@
 			name = "Copy Corel Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		533DC1AC10648B5B0018CC95 /* Copy Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				533DC19F10648B4E0018CC95 /* riffopen in Copy Helper App */,
+			);
+			name = "Copy Helper App";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +64,7 @@
 		533DBE1B1061E9910018CC95 /* Renderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Renderer.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/Renderer.framework"; sourceTree = "<absolute>"; };
 		533DBE1C1061E9910018CC95 /* RiffIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RiffIO.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/RiffIO.framework"; sourceTree = "<absolute>"; };
 		533DBE551061EA8C0018CC95 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		533DC19410648AC30018CC95 /* riffopen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = riffopen.xcodeproj; path = riffopen/riffopen.xcodeproj; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACRIFFLoader.acplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7115090F3BD81600D9DC74 /* ACPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACPlugin.h; path = src/ACPlugin.h; sourceTree = "<group>"; };
 		CCF900720C29E19900BA85E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,8 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				533DBE1D1061E9910018CC95 /* Renderer.framework in Frameworks */,
-				533DBE1E1061E9910018CC95 /* RiffIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +90,7 @@
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
+				533DC19310648AAD0018CC95 /* Projects */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
@@ -132,6 +159,22 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		533DC19310648AAD0018CC95 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				533DC19410648AC30018CC95 /* riffopen.xcodeproj */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		533DC19510648AC30018CC95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				533DC19910648AC30018CC95 /* riffopen */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,11 +185,13 @@
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				533DBDEF1061E4C70018CC95 /* Copy Corel Frameworks */,
+				533DC1AC10648B5B0018CC95 /* Copy Helper App */,
 				8D5B49AF048680CD000E48DA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				533DC19B10648ACD0018CC95 /* PBXTargetDependency */,
 			);
 			name = ACRIFFLoader;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -164,12 +209,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* acplugins */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 533DC19510648AC30018CC95 /* Products */;
+					ProjectRef = 533DC19410648AC30018CC95 /* riffopen.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* ACRIFFLoader */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		533DC19910648AC30018CC95 /* riffopen */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = riffopen;
+			remoteRef = 533DC19810648AC30018CC95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D5B49AF048680CD000E48DA /* Resources */ = {
@@ -191,6 +252,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		533DC19B10648ACD0018CC95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = riffopen;
+			targetProxy = 533DC19A10648ACD0018CC95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB913C08733D840010E9CD /* Release */ = {
@@ -219,7 +288,10 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
+				ARCHS = (
+					i386,
+					x86_64,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
