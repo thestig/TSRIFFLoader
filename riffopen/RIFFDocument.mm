@@ -11,8 +11,7 @@
 #import <RiffIO/RiffIO.h>
 #import <fstream>
 
-// C++ Interface
-
+// C++ Interface to read RIFF files
 class RIFFDataStream : public IDataStream
 {
 	std::fstream _stream;
@@ -116,15 +115,13 @@ public:
 															 pixelsHigh: (int) h
 															invertAlpha: (BOOL) invert
 {
-#define BEST_BYTE_ALIGNMENT 16
-#define COMPUTE_BEST_BYTES_PER_ROW(bpr) (((bpr) + (BEST_BYTE_ALIGNMENT - 1)) & ~(BEST_BYTE_ALIGNMENT - 1))
-	
 	// Painter is 32 bit ARGB
 	const int kPixelSize = 4;
+	const int kBestByteAlignment = 16;
 	int rowBytes = w * kPixelSize;
 	
-	// Round up to nearest multiple of BEST_BYTE_ALIGNMENT
-	rowBytes = COMPUTE_BEST_BYTES_PER_ROW(rowBytes);
+	// Round up to nearest multiple of kBestByteAlignment
+	rowBytes = (((rowBytes) + (kBestByteAlignment - 1)) & ~(kBestByteAlignment - 1));
 	
 	unsigned char* rasterData = static_cast<unsigned char*>(calloc(1, rowBytes * h));
 	if (NULL == rasterData)
@@ -177,22 +174,7 @@ public:
 	return destImage;
 }
 
-- (CGImageRef) thumbnail
-{
-	IRiffDocument* riffDocument = [self openRIFFFile];
-	if (!riffDocument)
-		return nil;
-	
-	short h, w;
-	IRiffBinaryData* riffData = riffDocument->getThumbnail(h, w);
-	
-	CGImageRef thumbnailImage = [self getImageFromRiffBinaryData: riffData pixelsWide: w pixelsHigh: h invertAlpha: NO];
-	
-	riffDocument->release();
-	
-	return thumbnailImage;
-}
-
+// Map the Painter "merge modes" to CGBlendMode to the best of our abilities
 - (CGBlendMode) getCGBlendMode: (short) riffMergeMode
 {
 	CGBlendMode mode = kCGBlendModeNormal;
@@ -260,13 +242,20 @@ public:
 			break;
 			
 		default:
+			mode = kCGBlendModeNormal;
 			break;
 	}
 	
 	return mode;
 }
 
-- (CGImageRef) getLayer: (int) layer isVisible: (BOOL*) visible layerOffset: (CGPoint*) offset layerOpacity: (double*) opacity blendMode: (CGBlendMode*) mode
+- (CGImageRef) getLayer: (int) layer 
+							isVisible: (BOOL*) visible 
+						layerOffset: (CGPoint*) offset 
+					 layerOpacity: (double*) opacity 
+							blendMode: (CGBlendMode*) mode
+							layerName: (NSString**) lyrName
+
 {
 	IRiffDocument* riffDocument = [self openRIFFFile];
 	if (!riffDocument)
@@ -299,12 +288,29 @@ public:
 	{
 		*mode = [self getCGBlendMode: layer_properties.algorithm];
 	}
+	if (lyrName)
+	{
+		if (layer_properties.name[0] > 0)
+		{
+			// Ensure null-terminated string
+			short len = layer_properties.name[0] + 1;
+			if (len > 0xFF)
+				len = 0xFF;
+			layer_properties.name[len] = 0;
+			*lyrName = [NSString stringWithCString:(char *)(layer_properties.name + 1) encoding: NSMacOSRomanStringEncoding];
+		}
+		else 
+		{
+			*lyrName = [NSString stringWithString: @"Canvas"];
+		}
+
+	}
 	
 	IRiffBinaryData* riffData = riffLayer->getCombinedData(false);
 	if (!riffData)
 		return nil;
 	
-	// invert alpha channel on layers
+	// alpha channel in Painter has opposite meaning of Quartz, so invert it on layers
 	CGImageRef layerImage = [self getImageFromRiffBinaryData: riffData pixelsWide: w pixelsHigh: h invertAlpha: (0 != layer)];
 	
 	riffDocument->release();

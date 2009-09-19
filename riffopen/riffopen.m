@@ -75,31 +75,19 @@ int main (int argc, const char * argv[])
 														[NSXMLNode attributeWithName: @"dpi" stringValue:[NSString stringWithFormat: @"%3.1f", riffdoc.resolution]],
 														nil]];
 
-			CGImageRef thumbnail = [riffdoc thumbnail];
-			if (thumbnail)
-			{
-				NSXMLElement *thumbDesc = [[NSXMLElement alloc] initWithName: @"thumbnail"];
-				[thumbDesc setAttributes: [NSArray arrayWithObjects:
-																	 [NSXMLNode attributeWithName: @"width" stringValue: [NSString stringWithFormat: @"%d", CGImageGetWidth(thumbnail)]],
-																	 [NSXMLNode attributeWithName: @"height" stringValue: [NSString stringWithFormat: @"%d", CGImageGetHeight(thumbnail)]],
-																	 nil]];
-
-				NSURL *url = UniquePath();
-				NSXMLElement *thumbPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url path]];
-				[thumbDesc addChild: thumbPath];
-				ExportCGDrawingAsPNG(thumbnail, 72.0, (CFURLRef)url);
-
-				[doc addChild: thumbDesc];
-				CGImageRelease(thumbnail);
-			}
-			
 			for (int k = 0; k < riffdoc.layerCount; k++) 
 			{
 				BOOL visible;
 				CGPoint offset;
 				double opacity;
 				CGBlendMode mode;
-				CGImageRef img = [riffdoc getLayer: k isVisible: &visible layerOffset: &offset layerOpacity: &opacity blendMode: &mode];
+				NSString *lyrName;
+				CGImageRef img = [riffdoc getLayer: k 
+																 isVisible: &visible 
+															 layerOffset: &offset 
+															layerOpacity: &opacity 
+																 blendMode: &mode
+																 layerName: &lyrName];
 				if (img)
 				{
 					NSXMLElement *layerDesc = [[NSXMLElement alloc] initWithName: @"layer"];
@@ -112,6 +100,7 @@ int main (int argc, const char * argv[])
 																		 [NSXMLNode attributeWithName: @"offset-y" stringValue: [NSString stringWithFormat: @"%3.1f", offset.y]],
 																		 [NSXMLNode attributeWithName: @"opacity" stringValue: [NSString stringWithFormat: @"%4.3f", opacity]],
 																		 [NSXMLNode attributeWithName: @"blend-mode" stringValue: [NSString stringWithFormat: @"%d", mode]],
+																		 [NSXMLNode attributeWithName: @"name" stringValue: lyrName],
 																		 nil]];
 					NSURL *url = UniquePath();
 					NSXMLElement *layerPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url path]];

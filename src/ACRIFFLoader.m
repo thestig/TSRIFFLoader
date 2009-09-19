@@ -77,49 +77,6 @@
 	[[NSFileManager defaultManager] removeItemAtURL: url error: nil];
 }
 
-- (BOOL) loadCompoisteForDocument: (id<ACDocument>) document fromURL: (NSURL*) absoluteURL
-{
-	BOOL result = NO;
-	
-	NSXMLDocument *xml = [self parseRIFFDocumentAtURL: absoluteURL];
-	// Parse retrieved XML
-	NSXMLNode *root  = [xml rootElement];
-	NSXMLNode *doc = [[root nodesForXPath: @"//document" error: nil] objectAtIndex: 0];
-
-	// Populate our document with data
-	if (doc)
-	{
-		// Load thumbnail
-		CGImageRef imageRef;
-		NSXMLElement *thumbnail = [[doc nodesForXPath: @"thumbnail" error: nil] objectAtIndex: 0];
-		[self loadImage: &imageRef fromNode: thumbnail];
-    
-    if (imageRef) 
-		{
-			[document setCanvasSize: NSMakeSize(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef))];
-			
-			id <ACGroupLayer> baseGroup = [document baseGroup];
-			[baseGroup insertCGImage: imageRef atIndex: 0 withName: NSLocalizedString(@"Background", @"Background")];
-			
-			CGImageRelease(imageRef);
-			
-			result = YES;
-		}
-		
-		// Cleanup layers that may have been created
-		NSArray *layers = [doc nodesForXPath:@"layer" error: nil];
-		for (NSXMLElement* layer in layers)
-		{
-			//NSLog(@"layer: %@", layer);
-			[self loadImage: nil fromNode: layer];
-		}
-	}
-	
-	[xml release];
-
-	return result;
-}
-
 - (BOOL) readImageForDocument: (id<ACDocument>) document 
 											fromURL: (NSURL*) absoluteURL 
 											 ofType: (NSString*) type
@@ -134,11 +91,7 @@
 
 	// Populate document with data
 	if (doc)
-	{
-		// Cleanup thumbnail, if any
-		NSXMLElement *thumbnail = [[doc nodesForXPath: @"thumbnail" error: nil] objectAtIndex: 0];
-		[self loadImage: NULL fromNode: thumbnail];
-		
+	{		
 		// Figure out document size
 		int docWidth = [[[[doc nodesForXPath:@"@width" error: nil] objectAtIndex: 0] objectValue] intValue];
 		int docHeight = [[[[doc nodesForXPath:@"@height" error: nil] objectAtIndex: 0] objectValue] intValue];
@@ -168,25 +121,25 @@
 			int offsety = [[[[layer nodesForXPath:@"@offset-y" error: nil] objectAtIndex: 0] objectValue] intValue];
 			float opacity = [[[[layer nodesForXPath:@"@opacity" error: nil] objectAtIndex: 0] objectValue] floatValue];
 			CGBlendMode mode = [[[[layer nodesForXPath:@"@blend-mode" error: nil] objectAtIndex: 0] objectValue] intValue];
+			NSString *layerName = [[[layer nodesForXPath:@"@name" error: nil] objectAtIndex: 0] objectValue];
 			
 			CGImageRef imageRef;
 			[self loadImage: &imageRef fromNode: layer];
 			if (imageRef)
 			{
-				//FIXME: add real name
-				NSString *name = NSLocalizedString(@"Background", @"Background");//@"test";//NSString stringWithUTF8String:(const char *)psdLayer.layer_name];
-				
-				id <ACGroupLayer> baseGroup = [document baseGroup];
-				id <ACBitmapLayer> layer    = [baseGroup insertCGImage: imageRef atIndex:0 withName: name];
-				
 				// Base layer should ignore these values
 				if (i == 0)
 				{
+					layerName =  NSLocalizedString(@"Background", @"Background");
 					opacity = 1.0f;
 					mode = kCGBlendModeNormal;
 					offsetx = 0;
 					offsety = 0;
 				}
+
+				id <ACGroupLayer> baseGroup = [document baseGroup];
+				id <ACBitmapLayer> layer    = [baseGroup insertCGImage: imageRef atIndex:0 withName: layerName];
+				
 				[layer setVisible: visible];
 				[layer setOpacity: opacity];
 				NSPoint drawDelta = NSMakePoint(offsetx, docHeight - (offsety + CGImageGetHeight(imageRef)));

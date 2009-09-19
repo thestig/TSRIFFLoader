@@ -19,8 +19,12 @@
 }
 
 - (id) initWithFile: (NSString*) filepath;
-- (CGImageRef) getLayer: (int) layer isVisible: (BOOL*) visible layerOffset: (CGPoint*) offset layerOpacity: (double*) opacity blendMode: (CGBlendMode*) mode;
-- (CGImageRef) thumbnail;
+- (CGImageRef) getLayer: (int) layer 
+							isVisible: (BOOL*) visible 
+						layerOffset: (CGPoint*) offset 
+					 layerOpacity: (double*) opacity 
+							blendMode: (CGBlendMode*) mode
+							layerName: (NSString**) lyrName;
 
 @property (readonly, nonatomic) short width;
 @property (readonly, nonatomic) short height;
