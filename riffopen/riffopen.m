@@ -52,7 +52,7 @@ NSURL* UniquePath()
 	CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
 	NSString *str = (NSString*)CFUUIDCreateString(kCFAllocatorDefault, uuid);
 	CFRelease(uuid);
-	return [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@.png", @"/tmp/"/*NSTemporaryDirectory()*/, [str autorelease]]];
+	return [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@.png", NSTemporaryDirectory(), [str autorelease]]];
 }
 
 int main (int argc, const char * argv[]) 
