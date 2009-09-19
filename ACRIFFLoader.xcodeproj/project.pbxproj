@@ -296,7 +296,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					ppc,
 					i386,
 					x86_64,
 				);
@@ -357,8 +356,8 @@
 		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ACRIFFLoader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB913C08733D840010E9CD /* Release */,
 				CC2C7CA10B0BC41F00A22730 /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -366,8 +365,8 @@
 		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ACRIFFLoader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB914008733D840010E9CD /* Release */,
 				CC2C7CA00B0BC41F00A22730 /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
