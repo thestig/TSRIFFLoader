@@ -72,6 +72,7 @@ int main (int argc, const char * argv[])
 			[doc setAttributes: [NSArray arrayWithObjects:
 														[NSXMLNode attributeWithName: @"width" stringValue:[NSString stringWithFormat: @"%d", riffdoc.width]],
 														[NSXMLNode attributeWithName: @"height" stringValue:[NSString stringWithFormat: @"%d", riffdoc.height]],
+														[NSXMLNode attributeWithName: @"dpi" stringValue:[NSString stringWithFormat: @"%3.1f", riffdoc.resolution]],
 														nil]];
 
 			CGImageRef thumbnail = [riffdoc thumbnail];
