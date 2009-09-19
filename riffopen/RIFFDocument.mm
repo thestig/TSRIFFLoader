@@ -129,7 +129,7 @@ public:
 	unsigned char* rasterData = static_cast<unsigned char*>(calloc(1, rowBytes * h));
 	if (NULL == rasterData)
 	{
-		NSLog(@"calloc: could not allocate %d bytes", rowBytes * h);
+		//NSLog(@"calloc: could not allocate %d bytes", rowBytes * h);
 		return NULL;
 	}
 	
@@ -168,7 +168,7 @@ public:
 	if (NULL == context)
 	{
 		free(rasterData);
-		NSLog(@"Unable to create context");
+		//NSLog(@"Unable to create context");
 		return NULL;
 	}
 	

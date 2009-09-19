@@ -63,7 +63,8 @@ int main (int argc, const char * argv[])
 
 	for (int i = 1; i < argc; i++)
 	{
-		NSString *path = [NSString stringWithCString: argv[i] encoding: NSASCIIStringEncoding];
+		NSString *path = [NSString stringWithCString: argv[i] encoding: NSUTF8StringEncoding];
+		//NSLog(@"Opening file: %@", path);
 		RIFFDocument *riffdoc = [[RIFFDocument alloc] initWithFile: path];
 		if (riffdoc)
 		{
@@ -83,7 +84,7 @@ int main (int argc, const char * argv[])
 																	 nil]];
 
 				NSURL *url = UniquePath();
-				NSXMLElement *thumbPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url absoluteString]];
+				NSXMLElement *thumbPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url path]];
 				[thumbDesc addChild: thumbPath];
 				ExportCGDrawingAsPNG(thumbnail, 72.0, (CFURLRef)url);
 
@@ -112,7 +113,7 @@ int main (int argc, const char * argv[])
 																		 [NSXMLNode attributeWithName: @"blend-mode" stringValue: [NSString stringWithFormat: @"%d", mode]],
 																		 nil]];
 					NSURL *url = UniquePath();
-					NSXMLElement *layerPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url absoluteString]];
+					NSXMLElement *layerPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url path]];
 					[layerDesc addChild: layerPath];
 					ExportCGDrawingAsPNG(img, riffdoc.resolution, (CFURLRef)url);
 					
