@@ -144,6 +144,7 @@
 				[layer setOpacity: opacity];
 				NSPoint drawDelta = NSMakePoint(offsetx, docHeight - (offsety + CGImageGetHeight(imageRef)));
 				[layer setDrawDelta: drawDelta];
+				[layer setCompositingMode: mode];
 				
 				CGImageRelease(imageRef);
 				i--;
