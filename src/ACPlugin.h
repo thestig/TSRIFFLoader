@@ -102,7 +102,8 @@ enum {
 
 @property (assign) BOOL visible;
 @property (assign) float opacity;
-@property (assign) CGBlendMode compositingMode;
+@property (assign) CGBlendMode compositingMode; // aka, also the blend mode.
+
 @end
 
 
