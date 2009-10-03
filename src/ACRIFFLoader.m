@@ -35,7 +35,7 @@
 {
 	// Launch helper application
 	NSTask *task = [[NSTask alloc] init];
-	[task setLaunchPath: [[NSBundle bundleWithIdentifier:@"stig.the.Acorn.ACRIFFLoader"] pathForAuxiliaryExecutable: @"riffopen"]];
+	[task setLaunchPath: [[NSBundle bundleForClass: [self class]] pathForAuxiliaryExecutable: @"riffopen"]];
 	
 	NSArray *arguments = [NSArray arrayWithObject: [absoluteURL path]];
 	[task setArguments: arguments];
