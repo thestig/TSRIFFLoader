@@ -52,10 +52,11 @@
 	NSString *output = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
 	
 	NSXMLDocument *xml = [[NSXMLDocument alloc] initWithXMLString: output options: NSXMLDocumentTidyXML error: nil];
-	
+
+  [output release];
 	[task release];
 	
-	return xml;
+	return [xml autorelease];
 }
 
 - (void) loadImage: (CGImageRef*) imageRef fromNode: (NSXMLNode*) node
@@ -154,8 +155,6 @@
 		}
 	}
 	
-	[xml release];
-
 	return result;
 }
 
