@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>stig.the.Acorn.ACRIFFLoader</string>
+	<string>stig.the.Acorn.TSRIFFLoader</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -21,6 +21,6 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>ACRIFFLoader</string>
+	<string>TSRIFFLoader</string>
 </dict>
 </plist>

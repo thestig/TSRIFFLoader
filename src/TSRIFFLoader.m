@@ -1,14 +1,14 @@
 //
-//  ACRIFFLoader.m
-//  ACRIFFLoader
+//  TSRIFFLoader.m
+//  TSRIFFLoader
 //
 //  Created by The Stig on 16/09/09.
 //  Copyright 2009 The Stig. All rights reserved.
 //
 
-#import "ACRIFFLoader.h"
+#import "TSRIFFLoader.h"
 
-@implementation ACRIFFLoader
+@implementation TSRIFFLoader
 
 + (id) plugin
 {

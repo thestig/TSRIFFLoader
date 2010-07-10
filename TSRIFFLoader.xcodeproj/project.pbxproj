@@ -12,7 +12,7 @@
 		533DC19F10648B4E0018CC95 /* riffopen in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 533DC19910648AC30018CC95 /* riffopen */; };
 		533DC36C10653FC90018CC95 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 533DC36B10653FC90018CC95 /* LICENSE.txt */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		CCF900820C29E1CB00BA85E7 /* ACRIFFLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */; };
+		CCF900820C29E1CB00BA85E7 /* TSRIFFLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF900810C29E1CB00BA85E7 /* TSRIFFLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,14 +64,14 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		533DBE1B1061E9910018CC95 /* Renderer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Renderer.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/Renderer.framework"; sourceTree = "<absolute>"; };
 		533DBE1C1061E9910018CC95 /* RiffIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RiffIO.framework; path = "/Applications/Corel Painter 11/Corel Painter 11.app/Contents/Frameworks/RiffIO.framework"; sourceTree = "<absolute>"; };
-		533DBE551061EA8C0018CC95 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		533DBE551061EA8C0018CC95 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		533DC19410648AC30018CC95 /* riffopen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = riffopen.xcodeproj; path = riffopen/riffopen.xcodeproj; sourceTree = "<group>"; };
 		533DC36B10653FC90018CC95 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACRIFFLoader.acplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* TSRIFFLoader.acplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSRIFFLoader.acplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7115090F3BD81600D9DC74 /* ACPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACPlugin.h; path = src/ACPlugin.h; sourceTree = "<group>"; };
 		CCF900720C29E19900BA85E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CCF900800C29E1CB00BA85E7 /* ACRIFFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACRIFFLoader.h; path = src/ACRIFFLoader.h; sourceTree = "<group>"; };
-		CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ACRIFFLoader.m; path = src/ACRIFFLoader.m; sourceTree = "<group>"; };
+		CCF900800C29E1CB00BA85E7 /* TSRIFFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSRIFFLoader.h; path = src/TSRIFFLoader.h; sourceTree = "<group>"; };
+		CCF900810C29E1CB00BA85E7 /* TSRIFFLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSRIFFLoader.m; path = src/TSRIFFLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				533DC36B10653FC90018CC95 /* LICENSE.txt */,
-				533DBE551061EA8C0018CC95 /* README.rtf */,
+				533DBE551061EA8C0018CC95 /* README.txt */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -120,8 +120,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CCF900800C29E1CB00BA85E7 /* ACRIFFLoader.h */,
-				CCF900810C29E1CB00BA85E7 /* ACRIFFLoader.m */,
+				CCF900800C29E1CB00BA85E7 /* TSRIFFLoader.h */,
+				CCF900810C29E1CB00BA85E7 /* TSRIFFLoader.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */,
+				8D5B49B6048680CD000E48DA /* TSRIFFLoader.acplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* ACRIFFLoader */ = {
+		8D5B49AC048680CD000E48DA /* TSRIFFLoader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ACRIFFLoader" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TSRIFFLoader" */;
 			buildPhases = (
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
@@ -196,10 +196,10 @@
 			dependencies = (
 				533DC19B10648ACD0018CC95 /* PBXTargetDependency */,
 			);
-			name = ACRIFFLoader;
+			name = TSRIFFLoader;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = acplugins;
-			productReference = 8D5B49B6048680CD000E48DA /* ACRIFFLoader.acplugin */;
+			productReference = 8D5B49B6048680CD000E48DA /* TSRIFFLoader.acplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 			attributes = {
 				ORGANIZATIONNAME = "The Stig";
 			};
-			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ACRIFFLoader" */;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TSRIFFLoader" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* acplugins */;
@@ -223,7 +223,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				8D5B49AC048680CD000E48DA /* ACRIFFLoader */,
+				8D5B49AC048680CD000E48DA /* TSRIFFLoader */,
 			);
 		};
 /* End PBXProject section */
@@ -254,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF900820C29E1CB00BA85E7 /* ACRIFFLoader.m in Sources */,
+				CCF900820C29E1CB00BA85E7 /* TSRIFFLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +287,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ACRIFFLoader;
+				PRODUCT_NAME = TSRIFFLoader;
 				WRAPPER_EXTENSION = acplugin;
 			};
 			name = Release;
@@ -347,7 +347,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ACRIFFLoader;
+				PRODUCT_NAME = TSRIFFLoader;
 				WRAPPER_EXTENSION = acplugin;
 			};
 			name = Debug;
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ACRIFFLoader" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "TSRIFFLoader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC2C7CA10B0BC41F00A22730 /* Debug */,
@@ -364,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ACRIFFLoader" */ = {
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "TSRIFFLoader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC2C7CA00B0BC41F00A22730 /* Debug */,

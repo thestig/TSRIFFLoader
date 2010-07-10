@@ -1,5 +1,5 @@
-ACRIFFLoader is licensed under the terms of the MIT license reproduced 
-below. This means that ACRIFFLoader is free software and can be used for 
+TSRIFFLoader is licensed under the terms of the MIT license reproduced 
+below. This means that TSRIFFLoader is free software and can be used for 
 both academic and commercial purposes at absolutely no cost.
 Just thank "The Stig" in your credits. 
 
