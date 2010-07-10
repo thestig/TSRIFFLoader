@@ -59,10 +59,9 @@ int main (int argc, const char * argv[])
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
-	NSXMLElement *root = [[NSXMLElement alloc] initWithName: @"riff"];
-
 	for (int i = 1; i < argc; i++)
 	{
+    NSXMLElement *root = [[NSXMLElement alloc] initWithName: @"riff"];
 		NSString *path = [NSString stringWithCString: argv[i] encoding: NSUTF8StringEncoding];
 		//NSLog(@"Opening file: %@", path);
 		RIFFDocument *riffdoc = [[RIFFDocument alloc] initWithFile: path];
@@ -113,10 +112,12 @@ int main (int argc, const char * argv[])
 			}
 			
 			[root addChild: doc];
+      [doc release];
 			[riffdoc release];
 		}
 
 		NSXMLDocument *xml = [[NSXMLDocument alloc] initWithRootElement: root];
+    [root release];
 		printf("%s", (const char*)[[xml XMLData] bytes]);
 		[xml release];
 
