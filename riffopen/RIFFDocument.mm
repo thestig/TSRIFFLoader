@@ -249,12 +249,12 @@ public:
 	return mode;
 }
 
-- (CGImageRef) getLayer: (int) layer 
-							isVisible: (BOOL*) visible 
-						layerOffset: (CGPoint*) offset 
-					 layerOpacity: (double*) opacity 
-							blendMode: (CGBlendMode*) mode
-							layerName: (NSString**) lyrName
+- (CGImageRef) copyLayer: (int) layer 
+               isVisible: (BOOL*) visible 
+             layerOffset: (CGPoint*) offset 
+            layerOpacity: (double*) opacity 
+               blendMode: (CGBlendMode*) mode
+               layerName: (NSString**) lyrName
 
 {
 	IRiffDocument* riffDocument = [self openRIFFFile];

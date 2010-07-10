@@ -81,12 +81,12 @@ int main (int argc, const char * argv[])
 				double opacity;
 				CGBlendMode mode;
 				NSString *lyrName;
-				CGImageRef img = [riffdoc getLayer: k 
-																 isVisible: &visible 
-															 layerOffset: &offset 
-															layerOpacity: &opacity 
-																 blendMode: &mode
-																 layerName: &lyrName];
+				CGImageRef img = [riffdoc copyLayer: k 
+                                  isVisible: &visible 
+                                layerOffset: &offset 
+                               layerOpacity: &opacity 
+                                  blendMode: &mode
+                                  layerName: &lyrName];
 				if (img)
 				{
 					NSXMLElement *layerDesc = [[NSXMLElement alloc] initWithName: @"layer"];
@@ -104,9 +104,11 @@ int main (int argc, const char * argv[])
 					NSURL *url = UniquePath();
 					NSXMLElement *layerPath = [[NSXMLElement alloc] initWithName: @"path" stringValue: [url path]];
 					[layerDesc addChild: layerPath];
+          [layerPath release];
 					ExportCGDrawingAsPNG(img, riffdoc.resolution, (CFURLRef)url);
 					
 					[doc addChild: layerDesc];
+          [layerDesc release];
 					CGImageRelease(img);
 				}
 			}
