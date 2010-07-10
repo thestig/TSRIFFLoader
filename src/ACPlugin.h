@@ -79,9 +79,9 @@ enum {
 
 /*
  Can we handle shape layers?  If yes, then our action is handed the layer instead of a CIImage
- 
+
  return [NSNumber numberWithBool:YES]; 
- 
+
  NSNumber is used to be friendly with scripting languages.
  */
 - (NSNumber*) worksOnShapeLayers:(id)userObject;
@@ -93,9 +93,9 @@ enum {
 @protocol ACLayer <NSObject>
 /* There are currently three types of layers.  "Bitmap" layers which contain pixels,
  and "Shape" layers which contain Text.  And then Group layers, which is a group of layers.
- 
+
  And maybe other things eventually.
- 
+
  Check out the ACLayerType enum for the constants to tell which is which.
  */
 - (int) layerType;
@@ -291,7 +291,7 @@ enum {
  CTGradient is in Acorn, it's just got a different name- "TSGradient".
  For more info on CTGradient, visit here:
  http://blog.oofn.net/2006/01/15/gradients-in-cocoa/
- 
+
  You can use it like so:
  id fade = [NSClassFromString(@"TSGradient") gradientWithBeginningColor:[NSColor clearColor] endingColor:[NSColor blackColor]];
  */

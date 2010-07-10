@@ -24,7 +24,7 @@ public:
 	{
 		delete this;
 	}
-
+  
 	void read(void *buffer, int count)
 	{
 		_stream.read((char*)buffer, count);
@@ -33,7 +33,7 @@ public:
 	{
 		_stream.write((char*)buffer, count);
 	}
-
+  
 	void seek(int pos, std::ios_base::seekdir base)
 	{
 		_stream.seekg(pos, base);
@@ -42,7 +42,7 @@ public:
 	{
 		return _stream.tellg();
 	}
-
+  
 	bool fail()
 	{
 		return _stream.fail();
@@ -303,7 +303,7 @@ public:
 		{
 			*lyrName = [NSString stringWithString: @"Canvas"];
 		}
-
+    
 	}
 	
 	IRiffBinaryData* riffData = riffLayer->getCombinedData(false);

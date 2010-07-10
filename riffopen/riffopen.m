@@ -58,7 +58,7 @@ NSURL* UniquePath()
 int main (int argc, const char * argv[]) 
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
+  
 	for (int i = 1; i < argc; i++)
 	{
     NSXMLElement *root = [[NSXMLElement alloc] initWithName: @"riff"];
@@ -69,11 +69,11 @@ int main (int argc, const char * argv[])
 		{
 			NSXMLElement *doc = [[NSXMLElement alloc] initWithName: @"document"];
 			[doc setAttributes: [NSArray arrayWithObjects:
-														[NSXMLNode attributeWithName: @"width" stringValue:[NSString stringWithFormat: @"%d", riffdoc.width]],
-														[NSXMLNode attributeWithName: @"height" stringValue:[NSString stringWithFormat: @"%d", riffdoc.height]],
-														[NSXMLNode attributeWithName: @"dpi" stringValue:[NSString stringWithFormat: @"%3.1f", riffdoc.resolution]],
-														nil]];
-
+                           [NSXMLNode attributeWithName: @"width" stringValue:[NSString stringWithFormat: @"%d", riffdoc.width]],
+                           [NSXMLNode attributeWithName: @"height" stringValue:[NSString stringWithFormat: @"%d", riffdoc.height]],
+                           [NSXMLNode attributeWithName: @"dpi" stringValue:[NSString stringWithFormat: @"%3.1f", riffdoc.resolution]],
+                           nil]];
+      
 			for (int k = 0; k < riffdoc.layerCount; k++) 
 			{
 				BOOL visible;
@@ -117,14 +117,14 @@ int main (int argc, const char * argv[])
       [doc release];
 			[riffdoc release];
 		}
-
+    
 		NSXMLDocument *xml = [[NSXMLDocument alloc] initWithRootElement: root];
     [root release];
 		printf("%s", (const char*)[[xml XMLData] bytes]);
 		[xml release];
-
+    
 	}
-
+  
 	[pool drain];
 	return 0;
 }

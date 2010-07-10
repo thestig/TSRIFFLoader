@@ -14,7 +14,7 @@
 
 @interface ACRIFFLoader : NSObject <ACPlugin, ACImageIOProvider> 
 {
-    
+
 }
 
 @end
